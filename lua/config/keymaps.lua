@@ -3,3 +3,5 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<A-p>", ":NeovimProjectDiscover<CR>", { desc = "Discover Projects" })
 vim.keymap.set("n", "<C-p>", ":NeovimProjectHistory<CR>", { desc = "Project History" })
+vim.keymap.set("n", "<leader>tfb", ":Telescope file_browser<CR>", { desc = "File Browser" })
+vim.keymap.set("n", "<C-?>", ":WhichKey<CR>", { desc = "Which Key?" })
