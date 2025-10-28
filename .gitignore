@@ -6,3 +6,8 @@ debug
 foo.*
 *.log
 data
+
+# Nextcloud sync stuff
+.nextcloudsync.log
+.sync_*.db*
+.sync-exclude.lst
