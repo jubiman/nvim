@@ -1,4 +1,5 @@
-return {
+return {}
+--[[return {
    {
       "coffebar/neovim-project",
       opts = {
@@ -26,4 +27,4 @@ return {
       lazy = false,
       priority = 100,
    },
-}
+}]]
