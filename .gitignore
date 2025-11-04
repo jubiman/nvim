@@ -1,0 +1,13 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# Nextcloud sync stuff
+.nextcloudsync.log
+.sync_*.db*
+.sync-exclude.lst
