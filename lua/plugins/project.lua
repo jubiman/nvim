@@ -1,4 +1,5 @@
-return {
+return {}
+--[[return {
     {
         "ahmedkhalf/project.nvim",
         opts = {
@@ -10,7 +11,7 @@ return {
             datapath = vim.fn.stdpath("data"),
         },
     },
-}
+}]]
 --[[return {
    {
       "coffebar/neovim-project",
