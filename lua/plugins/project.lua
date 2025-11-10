@@ -1,4 +1,16 @@
-return {}
+return {
+    {
+        "ahmedkhalf/project.nvim",
+        opts = {
+            manual_mode = false,
+            patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "CMakeLists.txt" },
+            show_hidden = true,
+            silent_chdir = false,
+            ignore_lsp = {},
+            datapath = vim.fn.stdpath("data"),
+        },
+    },
+}
 --[[return {
    {
       "coffebar/neovim-project",
