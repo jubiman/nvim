@@ -11,17 +11,37 @@ require("telescope").setup({
 require("render-markdown").enable()
 vim.cmd("colorscheme kanagawa-dragon")
 
--- vim.api.nvim_create_autocmd("LspAttach", {
---     group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
---     callback = function(args)
---         local client = vim.lsp.get_client_by_id(args.data.client_id)
---         if client == nil then
---             return
---         end
---         if client.name == "ruff" then
---             -- Disable hover in favor of Pyright
---             client.server_capabilities.hoverProvider = false
---         end
---     end,
---     desc = "LSP: Disable hover capability from Ruff",
--- })
+require("blink.cmp").setup({
+    sources = {
+        default = {
+            "jupynium",
+            -- ...
+        },
+        providers = {
+            jupynium = {
+                name = "Jupynium",
+                module = "jupynium.blink_cmp",
+                -- Consider higher priority than LSP
+                score_offset = 100,
+            },
+            -- ...
+        },
+    },
+})
+require("cmake-tools").setup({
+    cmake_command = "cmake", -- CMake command to run
+    cmake_build_directory = "build", -- Default build directory
+    cmake_console_size = 10, -- Console buffer height
+    cmake_show_console = "always", -- When to show the console window
+    cmake_dap_configuration = {}, -- DAP configuration
+    cmake_generate_options = {
+        "-G Ninja",
+        "-DCMAKE_C_COMPILER=clang",
+        "-DCMAKE_CXX_COMPILER=clang++",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+    },
+    cmake_notifications = {
+        runner = { enabled = false },
+        executor = { enabled = false },
+    },
+})

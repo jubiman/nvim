@@ -6,3 +6,8 @@ vim.keymap.set("n", "<leader>fp", ":lua Snacks.picker.projects()<CR>", { desc = 
 vim.keymap.set("n", "<leader>tfb", ":Telescope file_browser<CR>", { desc = "File Browser" })
 vim.keymap.set("n", "<leader>fu", ":Telescope lsp_references<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-?>", ":WhichKey<CR>", { desc = "Which Key?" })
+
+-- Map F5 to run
+vim.keymap.set("n", "<F5>", ":CMakeRun<CR>", { noremap = true, silent = true })
+-- Map F7 to build
+vim.keymap.set("n", "<F7>", ":CMakeBuild<CR>", { noremap = true, silent = true })
