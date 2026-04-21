@@ -11,3 +11,6 @@ vim.keymap.set("n", "<C-?>", ":WhichKey<CR>", { desc = "Which Key?" })
 vim.keymap.set("n", "<F5>", ":CMakeRun<CR>", { noremap = true, silent = true })
 -- Map F7 to build
 vim.keymap.set("n", "<F7>", ":CMakeBuild<CR>", { noremap = true, silent = true })
+
+-- Map leader + r to show error diagnostics
+vim.keymap.set("n", "<C-k>", vim.diagnostic.open_float, { desc = "Show full error" })
