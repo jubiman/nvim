@@ -1,6 +1,9 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+vim.cmd("colorscheme kanagawa-dragon")
+
 require("telescope").load_extension("file_browser")
+require("telescope").load_extension("project")
 require("telescope").setup({
     extensions = {
         file_browser = {
@@ -9,7 +12,6 @@ require("telescope").setup({
     },
 })
 require("render-markdown").enable()
-vim.cmd("colorscheme kanagawa-dragon")
 
 require("blink.cmp").setup({
     sources = {
