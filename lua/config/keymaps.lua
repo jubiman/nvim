@@ -14,3 +14,7 @@ vim.keymap.set("n", "<F7>", ":CMakeBuild<CR>", { noremap = true, silent = true }
 
 -- Map leader + r to show error diagnostics
 vim.keymap.set("n", "<C-k>", vim.diagnostic.open_float, { desc = "Show full error" })
+
+-- For copilot.vim
+vim.g.copilot_no_tab_map = true
+vim.keymap.set("i", "<S-Tab>", 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
